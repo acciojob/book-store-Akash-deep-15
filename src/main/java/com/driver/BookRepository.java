@@ -44,10 +44,10 @@ public class BookRepository {
     }
 
     public List<Book> findAll(){
-        if(!bookList.isEmpty())
-            return bookList;
-        else
-        return null;
+//        if(!bookList.isEmpty())
+             return bookList;
+//        else
+//        return null;
     }
 
     public void deleteBookById(int id){
@@ -70,9 +70,11 @@ public class BookRepository {
         List<Book> temp = bookList;
         List<Book> ans = new ArrayList<>();
 
-        for(Book B: temp) {
-            if(B.getAuthor() == author)
-                ans.add(B);
+        if(!temp.isEmpty()) {
+            for (Book B : temp) {
+                if (B.getAuthor() == author)
+                    ans.add(B);
+            }
         }
         return ans;
     }
@@ -81,10 +83,12 @@ public class BookRepository {
         List<Book> temp = bookList;
         List<Book> ans = new ArrayList<>();
 
-        for(Book B: temp) {
-            if(B.getGenre() == genre)
-                ans.add(B);
+        if(!temp.isEmpty()) {
+            for (Book B : temp) {
+                if (B.getGenre() == genre)
+                    ans.add(B);
 
+            }
         }
         return ans;
     }
